@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Zenith Vault - Premium men's artificial jewelry with style and sophistication." />
+  <meta name="keywords" content="men's jewelry, zenith vault, artificial jewelry, rings, necklaces, bracelets" />
+  <title>zenith_vault - Premium Men's Artificial Jewelry</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --dark-bg: #121212;
+      --dark-gray: #2f2f2f;
+      --gold: #d4af37;
+      --light-gold: #f2d87f;
+      --white: #f0f0f0;
+      --shadow: rgba(0, 0, 0, 0.8);
+      --font-main: 'Montserrat', sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0; 
+      background-color: var(--dark-bg);
+      font-family: var(--font-main);
+      color: var(--white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    header {
+      background: linear-gradient(45deg, var(--dark-gray), #1c1c1c);
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 140px;
+      height: auto;
+      user-select: none;
+      filter: drop-shadow(0 0 3px var(--gold));
+    }
+    header h1 {
+      font-weight: 900;
+      font-size: 2.6rem;
+      letter-spacing: 3px;
+      margin: 0;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 0 8px var(--gold);
+      user-select: none;
+    }
+    header p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--light-gold);
+    }
+    nav {
+      background-color: var(--dark-gray);
+      padding: 15px 0;
+      box-shadow: 0 3px 12px var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0 10px;
+      color: var(--gold);
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    nav a:hover {
+      color: var(--light-gold);
+    }
+    section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1501018317789-a53f1f00795d?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      height: 60vh;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px var(--shadow);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--gold);
+      text-shadow: 0 0 10px var(--shadow);
+      user-select: none;
+    }
+    .hero-content {
+      background-color: rgba(18, 18, 18, 0.8);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px var(--gold);
+    }
+    .hero-content h2 {
+      font-size: 3rem;
+      margin: 0 0 12px 0;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 900;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+    .cta-btn {
+      background: var(--gold);
+      border: none;
+      padding: 15px 40px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 40px;
+      cursor: pointer;
+      color: var(--dark-bg);
+      box-shadow: 0 0 25px var(--gold);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cta-btn:hover {
+      background: var(--light-gold);
+      box-shadow: 0 0 35px var(--light-gold);
+    }
+    h2.section-heading {
+      font-size: 2.4rem;
+      margin-bottom: 25px;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+      margin-bottom: 45px;
+    }
+    .product {
+      background-color: var(--dark-gray);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .product:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 15px 40px var(--gold);
+    }
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--gold);
+      user-select: none;
+    }
+    .product-details {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 1.4px;
+      font-size: 1.4rem;
+    }
+    .product p.price {
+      color: var(--light-gold);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin: 8px 0 20px 0;
+    }
+    .add-to-cart {
+      align-self: stretch;
+      background-color: var(--gold);
+      border: none;
+      padding: 12px 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      color: var(--dark-bg);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      user-select: none;
+    }
+    .add-to-cart:hover {
+      background-color: var(--light-gold);
+    }
+    #canvas {
+      width: 100%;
+      height: 520px;
+      border-radius: 15px;
+      box-shadow: 0 8px 32px var(--shadow);
+      background-color: #1c1c1c;
+      margin-top: 24px;
+      user-select: none;
+    }
+    .testimonials {
+      background: var(--dark-gray);
+      padding: 45px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 35px var(--shadow);
+      margin-bottom: 60px;
+    }
+    .testimonial {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 22px;
+      position: relative;
+      color: var(--light-gold);
+    }
+    .testimonial::before {
+      content: "\201C"; /* open quote */
+      font-size: 3rem;
+      position: absolute;
+      left: -30px;
+      top: -15px;
+      color: var(--gold);
+      opacity: 0.6;
+      user-select: none;
+    }
+    .faq {
+      margin-bottom: 60px;
+    }
+    .faq-item {
+      background-color: var(--dark-gray);
+      margin-bottom: 18px;
+      border-radius: 12px;
+      padding: 20px 25px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px var(--shadow);
+      transition: background-color 0.3s ease;
+    }
+    .faq-item:hover {
+      background-color: #2c2c2c;
+    }
+    .faq-item h4 {
+      margin: 0;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .faq-item p {
+      margin-top: 12px;
+      color: var(--light-gold);
+      line-height: 1.4;
+      display: none;
+      user-select: none;
+    }
+    section#contact {
+      max-width: 700px;
+      margin: 0 auto 100px auto;
+    }
+    form {
+      background-color: var(--dark-gray);
+      padding: 35px 30px 30px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      user-select: none;
+    }
+    form input, form textarea {
+      border-radius: 10px;
+      border: none;
+      padding: 15px 18px;
+      font-size: 1rem;
+      resize: vertical;
+      font-family: var(--font-main);
+      font-weight: 500;
+      color: var(--dark-bg);
+    }
+    form input::placeholder,
+    form textarea::placeholder {
+      color: #7f7f7f;
+    }
+    form button {
+      background: var(--gold);
+      border: none;
+      padding: 15px 0;
+      font-weight: 900;
+      font-size: 1.2rem;
+      border-radius: 40px;
+      cursor: pointer;
+      color: var(--dark-bg);
+      user-select: none;
+      letter-spacing: 2px;
+      transition: background 0.3s ease;
+      text-transform: uppercase;
+    }
+    form button:hover {
+      background: var(--light-gold);
+    }
+    footer {
+      background-color: var(--dark-gray);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--gold);
+      user-select: none;
+      box-shadow: inset 0 8px 15px rgba(0,0,0,0.8);
+    }
+    footer p {
+      margin: 8px 0 18px 0;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    footer a {
+      margin: 0 15px;
+      color: var(--gold);
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: var(--light-gold);
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        height: 45vh;
+      }
+      nav {
+        gap: 20px;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <!-- Your provided logo image from user -->
+    <img
+      src="https://cdn.pixabay.com/photo/2023/05/30/06/48/mens-jewellery-8027875_1280.jpg"
+      alt="zenith_vault Logo"
+      class="logo"
+      draggable="false"
+    />
+    <h1>zenith_vault</h1>
+    <p>Men's Jewelry Redefined</p>
+  </header>
+
+  <nav>
+    <a href="#home"><i class="fas fa-home"></i> Home</a>
+    <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+    <a href="#testimonials"><i class="fas fa-star"></i> Testimonials</a>
+    <a href="#faq"><i class="fas fa-question"></i> FAQ</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-content" role="banner" aria-label="Welcome hero section">
+      <h2>Discover Unmatched Style & Strength</h2>
+      <p>Browse the finest men's artificial jewelry, crafted for power and prestige.</p>
+      <button class="cta-btn" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+        Shop Now
+      </button>
+    </div>
+  </section>
+
+  <section id="gallery" aria-label="Featured jewelry products">
+    <h2 class="section-heading">Featured Collection</h2>
+    <div class="gallery">
+      <article class="product" tabindex="0" aria-label="Silver Titanium Ring for $49.99">
+        <img src="https://cdn.pixabay.com/photo/2018/07/11/21/08/ring-3533293_1280.jpg" alt="Silver Titanium Ring" />
+        <div class="product-details">
+          <h3>Silver Titanium Ring</h3>
+          <p class="price">$49.99</p>
+          <button class="add-to-cart" aria-label="Add Silver Titanium Ring to cart">Add to Cart</button>
+        </div>
+      </article>
+      <article class="product" tabindex="0" aria-label="Gold-Plated Necklace for $69.99">
+        <img src="https://cdn.pixabay.com/photo/2017/08/06/18/36/necklace-2597465_1280.jpg" alt="Gold-Plated Necklace" />
+        <div class="product-details">
+          <h3>Gold-Plated Necklace</h3>
+          <p class="price">$69.99</p>
+          <button class="add-to-cart" aria-label="Add Gold-Plated Necklace to cart">Add to Cart</button>
+        </div>
+      </article>
+      <article class="product" tabindex="0" aria-label="Stainless Steel Bracelet for $39.99">
+        <img src="https://cdn.pixabay.com/photo/2016/02/17/17/46/bracelet-1209587_1280.jpg" alt="Stainless Steel Bracelet" />
+        <div class="product-details">
+          <h3>Stainless Steel Bracelet</h3>
+          <p class="price">$39.99</p>
+          <button class="add-to-cart" aria-label="Add Stainless Steel Bracelet to cart">Add to Cart</button>
+        </div>
+      </article>
+    </div>
+
+    <h3 style="color: var(--gold); margin-bottom: 6px;">Interactive 3D Preview</h3>
+    <p style="color: var(--light-gold); font-size: 1rem; user-select:none;">Use your mouse or touch to rotate and zoom the 3D ring model below.</p>
+    <canvas id="canvas" role="img" aria-label="3D ring model preview"></canvas>
+  </section>
+
+  <section id="testimonials" class="testimonials" aria-label="Customer testimonials">
+    <h2 class="section-heading">What Our Customers Say</h2>
+    <blockquote class="testimonial" tabindex="0">
+      "Incredible quality and style. Feels like real gold!" – John D.
+    </blockquote>
+    <blockquote class="testimonial" tabindex="0">
+      "Perfect for everyday wear. Highly recommend." – Mike R.
+    </blockquote>
+  </section>
+
+  <section id="faq" class="faq" aria-label="Frequently Asked Questions">
+    <h2 class="section-heading">Frequently Asked Questions</h2>
+    <div class="faq-item" tabindex="0" role="button" aria-expanded="false" aria-controls="faq1" onclick="toggleFAQ(this)" onkeypress="if(event.key==='Enter'){toggleFAQ(this);}">
+      <h4 id="faq1">Are these pieces hypoallergenic?</h4>
+      <p>Yes, all our jewelry is made from hypoallergenic materials like stainless steel and titanium.</p>
+    </div>
+    <div class="faq-item" tabindex="0" role="button" aria-expanded="false" aria-controls="faq2" onclick="toggleFAQ(this)" onkeypress="if(event.key==='Enter'){toggleFAQ(this);}">
+      <h4 id="faq2">Do you offer customization?</h4>
+      <p>Absolutely! Contact us for personalized engraving or sizing.</p>
+    </div>
+  </section>
+
+  <section id="contact" aria-label="Contact form section">
+    <h2 class="section-heading">Contact Us</h2>
+    <form id="contactForm" aria-live="polite">
+      <input type="text" name="name" placeholder="Your Name" required aria-required="true" aria-label="Your Name" />
+      <input type="email" name="email" placeholder="Your Email" required aria-required="true" aria-label="Your Email" />
+      <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true" aria-label="Your Message"></textarea>
+      <button type="submit" aria-label="Send message to zenith vault">Send Message</button>
+    </form>
+    <p style="color: var(--light-gold); margin-top: 26px; user-select:none;">Or subscribe to our newsletter for updates:</p>
+    <div style="display:flex; gap:12px; max-width: 400px; margin-top: 12px;">
+      <input type="email" aria-label="Enter your email for newsletter" placeholder="Enter Email" style="flex-grow:1; padding: 12px 14px; border-radius: 8px; border:none; font-size:1rem;" />
+      <button class="cta-btn" style="padding: 0 24px; user-select: none;">Subscribe</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 zenith_vault. All rights reserved.</p>
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  </footer>
+
+  <!-- Three.js and dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script>
+    // Toggle FAQ sections
+    function toggleFAQ(button) {
+      const p = button.querySelector("p");
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", !expanded);
+      if (p.style.display === "block") {
+        p.style.display = "none";
+      } else {
+        p.style.display = "block";
+      }
+    }
+
+    // Contact form dummy submit
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you for contacting zenith_vault! We'll get back to you shortly.");
+      this.reset();
+    });
+
+    // THREE.js setup for 3D ring-like metallic torus
+    const scene = new THREE.Scene();
+
+    // Camera setup
+    const canvas = document.getElementById("canvas");
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    renderer.setSize(width, height, false);
+    renderer.setClearColor(0x121212, 1);
+
+    const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+    camera.position.set(0, 0, 5);
+
+    // Orbit controls for interaction
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.07;
+    controls.minDistance = 2;
+    controls.maxDistance = 10;
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
+    scene.add(ambientLight);
+
+    const pointLight1 = new THREE.PointLight(0xffd700, 1.1);
+    pointLight1.position.set(5, 5, 5);
+    scene.add(pointLight1);
+
+    const pointLight2 = new THREE.PointLight(0xffffff, 0.8);
+    pointLight2.position.set(-5, -3, 5);
+    scene.add(pointLight2);
+
+    // Metallic gold material
+    const torusMaterial = new THREE.MeshStandardMaterial({
+      color: 0xd4af37,
+      metalness: 0.8,
+      roughness: 0.2,
+      emissive: 0x4d3c0d,
+      emissiveIntensity: 0.15,
+    });
+
+    // Torus geometry representing a ring
+    const torusGeometry = new THREE.TorusGeometry(1.3, 0.35, 64, 100);
+    const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+    scene.add(torus);
+
+    // Add subtle rotation
+    function animate() {
+      requestAnimationFrame(animate);
+      torus.rotation.x += 0.005;
+      torus.rotation.y += 0.01;
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Resize handling
+    window.addEventListener("resize", () => {
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    });
+  </script>
+</body>
+</html>
